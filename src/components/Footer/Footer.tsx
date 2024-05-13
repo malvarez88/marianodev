@@ -15,7 +15,7 @@ const Footer = () => {
         <button className="border border-[#0C0404] rounded-full px-20 py-6 mt-10 w-auto text-center hover:bg-[#0C0404] hover:border-yellow-200 hover:text-yellow-200 transform transition-all duration-500 hover:scale-110">
           <p className="text-xl lg:text-4xl uppercase">Let&apos;s connect!</p>
         </button>
-        <div className="flex mt-10 items-center justify-between w-full ">
+        <div className="flex mt-10 items-center justify-between w-full flex-col md:flex-row">
           <div className="lg:border-t border-[#0C0404] lg:border-l p-6 text-xl lg:text-2xl">
             <p>Linkedin</p>
             <span className="text-sm lg:text-lg opacity-20">

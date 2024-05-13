@@ -4,8 +4,8 @@ import path from "path";
 import React, { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import Logo from "@/assets/icons/Logo";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Logo from "@/assets/icons/Logo";
 import ArrowIcon from "@/assets/icons/ArrowIcon";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -16,15 +16,15 @@ const menuLinks = [
     label: "Home",
   },
   {
-    path: "/work",
-    label: "Work",
-  },
-  {
-    path: "/about",
+    path: "#about",
     label: "About",
   },
   {
-    path: "/contact",
+    path: "#work",
+    label: "Work",
+  },
+  {
+    path: "#contact",
     label: "Contact",
   },
 ];
@@ -39,8 +39,20 @@ const Menu: React.FC = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isMenuOpen]);
+
   useGSAP(
     () => {
+      gsap.to(container.current, {
+        y: 0,
+        duration: 1,
+      });
       gsap.set(".menu-link-item-holder", { y: 120 });
       tl.current = gsap
         .timeline({ paused: true })
@@ -83,7 +95,7 @@ const Menu: React.FC = () => {
   }, [isMenuOpen]);
 
   return (
-    <div ref={container} className="relative z-20">
+    <div ref={container} className="relative z-20 -translate-y-20">
       <div
         className="z-1 fixed left-0 top-0 flex w-screen items-center justify-between bg-[#FDFCFA] px-8 lg:px-20 py-6"
         ref={navbar}
@@ -135,7 +147,7 @@ const Menu: React.FC = () => {
             ))}
           </div>
         </div>
-        <div className="mr-auto flex flex-col text-2xl">
+        <div className="mr-auto flex flex-col text-xl md:text-2xl">
           <a
             href={"https://www.linkedin.com/in/malvarez88/"}
             className="flex items-center gap-2 uppercase"
