@@ -85,23 +85,23 @@ const Menu: React.FC = () => {
   return (
     <div ref={container} className="relative z-20">
       <div
-        className="z-1 fixed left-0 top-0 flex w-screen items-center justify-between bg-white px-20 py-6"
+        className="z-1 fixed left-0 top-0 flex w-screen items-center justify-between bg-[#FDFCFA] px-8 lg:px-20 py-6"
         ref={navbar}
       >
         <div className="cursor-pointer">
           <Link href={"/"}>
-            <Logo fill={"#c5fb45"} />
+            <Logo fill={"#FEF08A"} />
           </Link>
         </div>
         <div
-          className="cursor-pointer text-4xl font-thin text-black"
+          className="cursor-pointer text-3xl font-thin text-[#0C0404]"
           onClick={toggleMenu}
         >
           Menu
         </div>
       </div>
 
-      <div className="menu-overlay z-2 fixed left-0 top-0 flex h-screen w-screen flex-col items-center justify-between bg-yellow-200 px-20 py-6">
+      <div className="menu-overlay z-2 fixed left-0 top-0 flex h-screen w-screen flex-col items-center justify-between bg-yellow-200 px-8 lg:px-20 py-6">
         <div className="flex w-full justify-between">
           <div className="">
             <Link href={"/"}>
@@ -109,7 +109,7 @@ const Menu: React.FC = () => {
             </Link>
           </div>
           <div
-            className="cursor-pointer text-4xl font-thin"
+            className="cursor-pointer text-3xl font-thin"
             onClick={toggleMenu}
           >
             Close
@@ -142,7 +142,7 @@ const Menu: React.FC = () => {
             target="_blank"
           >
             <span>Linkedin</span>
-            <ArrowIcon />
+            <ArrowIcon width={30} height={30} />
           </a>
           <a
             href={"https://github.com/malvarez88"}
@@ -150,7 +150,7 @@ const Menu: React.FC = () => {
             target="_blank"
           >
             <span>Github</span>
-            <ArrowIcon />
+            <ArrowIcon width={30} height={30} />
           </a>
           <a
             href="mailto:marianoalvarez66@gmail.com"
@@ -158,7 +158,7 @@ const Menu: React.FC = () => {
             target="_blank"
           >
             <span>marianoalvarez66@gmail.com</span>
-            <ArrowIcon />
+            <ArrowIcon width={30} height={30} />
           </a>
         </div>
       </div>

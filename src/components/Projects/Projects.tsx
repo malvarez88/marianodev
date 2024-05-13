@@ -17,22 +17,21 @@ const Projects = () => {
   return (
     <section className="my-10">
       <div className="min-h-screen w-full overflow-hidden px-8 py-10 lg:px-20">
-        <p className="mb-10 text-7xl text-black">My latest works.</p>
+        <p className="mb-10 text-7xl text-[#0C0404]">My latest works.</p>
         <div className="w-full">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative flex items-center justify-between border-b  border-black py-16"
+              className="group relative flex items-center justify-between border-b  border-[#0C0404] py-8 lg:py-16"
             >
-              <div className="flex items-center gap-4">
-                <p className="text-xl text-black lg:text-6xl">
+              <div className="flex flex-col lg:flex-row lg:items-center gap-4">
+                <p className="text-xl text-[#0C0404] lg:text-6xl">
                   {project.title} -{" "}
                 </p>{" "}
                 <span className="text-xl lg:text-4xl">{project.company}</span>
               </div>
-
               <div>
-                <p className="border-b border-black text-xl uppercase text-black lg:text-2xl">
+                <p className="border-b border-[#0C0404] text-sm uppercase text-[#0C0404] lg:text-2xl">
                   Website Development
                 </p>
               </div>
@@ -49,10 +48,10 @@ const Projects = () => {
           ))}
         </div>
         <div className="mt-20 flex items-center gap-10">
-          <p className="text-2xl uppercase text-black lg:text-4xl">
+          <p className="text-2xl uppercase text-[#0C0404] lg:text-4xl">
             Want to see more?{" "}
           </p>
-          <span className="text-xl font-thin normal-case text-black opacity-80 lg:text-3xl">
+          <span className="text-xl font-thin normal-case text-[#0C0404] opacity-80 lg:text-3xl">
             Let&apos; talk at:{" "}
             <a href="mailto:marianoalvarez66@gmail.com" target="_blank">
               marianoalvarez66@gmail.com
