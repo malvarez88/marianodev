@@ -22,7 +22,7 @@ const Projects: React.FC = () => {
 
   const animateProject = (ref: HTMLDivElement | null) => {
     gsap.to(ref, {
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+      opacity: 1,
       duration: 1,
       ease: "power4.out",
       delay: 0.5,
@@ -44,22 +44,27 @@ const Projects: React.FC = () => {
   return (
     <section className="my-10">
       <div className="min-h-screen w-full overflow-hidden px-8 py-10 lg:px-20">
-        <p className="mb-10 text-7xl text-[#0C0404]">My latest works.</p>
+        <p className="mb-10 text-7xl -tracking-[6px] text-[#0C0404]">
+          My latest works\{" "}
+          <span className="h-2 w-32 bg-yellow-200 inline-block"></span>
+        </p>
         <div className="w-full">
           {projects.map((project, index) => (
             <div
               key={index}
               ref={(el) => (projectsRefs.current[index] = el as any)}
-              className="projects group relative flex items-center justify-between border-b  border-[#0C0404] py-8 lg:py-16"
+              className="group relative flex items-start lg:items-center justify-between border-b flex-col lg:flex-row  border-[#0C0404] py-8 lg:py-16 opacity-0"
             >
               <div className="flex flex-col lg:flex-row lg:items-center gap-4">
-                <p className="text-xl text-[#0C0404] lg:text-6xl">
+                <p className="text-xl text-[#0C0404] md:text-4xl md:-tracking-[2px] lg:text-6xl lg:-tracking-[6px]">
                   {project.title} -{" "}
-                </p>{" "}
-                <span className="text-xl lg:text-4xl">{project.company}</span>
+                </p>
+                <span className="text-xl md:text-2xl lg:text-4xl -tracking-[2px] lg:-tracking-[4px]">
+                  {project.company}
+                </span>
               </div>
               <div>
-                <p className="border-b border-[#0C0404] text-sm uppercase text-[#0C0404] lg:text-2xl">
+                <p className="border-b border-[#0C0404] text-sm uppercase text-[#0C0404] lg:text-2xl -tracking-[2px] mt-4 lg:mt-0">
                   Website Development
                 </p>
               </div>

@@ -1,10 +1,11 @@
 "use client";
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ArrowIcon from "@/assets/icons/ArrowIcon";
+import { scroll } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,6 +14,8 @@ const Hero: React.FC = () => {
   const imgRef = useRef(null);
   const btnRef = useRef(null);
   const textRef = useRef(null);
+  const arrowRef = useRef<any | null>(null);
+  const scrollRef = useRef<any | null>(null);
 
   useGSAP(() => {
     const tl = gsap.timeline();
@@ -23,6 +26,11 @@ const Hero: React.FC = () => {
       ease: "power4.inOut",
     });
     tl.to(imgRef.current, {
+      opacity: 1,
+      duration: 1,
+      ease: "power4.inOut",
+    });
+    tl.to(arrowRef.current, {
       opacity: 1,
       duration: 1,
       ease: "power4.inOut",
@@ -41,33 +49,93 @@ const Hero: React.FC = () => {
     });
   });
 
+  useEffect(() => {
+    const arrow = arrowRef.current;
+    const scroll = scrollRef.current;
+
+    const handleMouseEnter = () => {
+      gsap.to(arrow, {
+        translateY: "2rem",
+        rotation: 135,
+        borderRadius: "100%",
+        duration: 0.5,
+        ease: "bounce.out",
+      });
+      gsap.to(scroll, {
+        translateY: "32px",
+        opacity: 1,
+        delay: 0.5,
+        ease: "bounce.out",
+      });
+    };
+
+    const handleMouseLeave = () => {
+      gsap.to(arrow, {
+        translateY: "0",
+        rotation: 0,
+        borderRadius: 0,
+        duration: 0.5,
+        ease: "bounce.out",
+      });
+      gsap.to(scroll, {
+        translateY: "-32px",
+        opacity: 0,
+        delay: 0.7,
+        ease: "bounce.out",
+      });
+    };
+
+    arrow?.addEventListener("mouseenter", handleMouseEnter);
+    arrow?.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      arrow?.removeEventListener("mouseenter", handleMouseEnter);
+      arrow?.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
+
   return (
     <section className="relative">
-      <div className="px-4 pt-40 lg:px-20 h-screen flex flex-col justify-between">
+      <div className="px-4 pt-56 lg:px-20 h-full flex flex-col gap-10 justify-around md:justify-between">
         <div className="flex ">
-          <p
-            className="text-[50px] font-normal text-yellow sm:text-[80px]  sm:leading-[80px] md:text-[100px] md:leading-[100px] lg:text-[140px] lg:leading-[140px] 2xl:text-[180px] 2xl:leading-[160px] title"
+          <h1
+            className="text-[78px] leading-[67px] -tracking-[8px] text-yellow sm:text-[80px]  sm:leading-[80px] md:text-[100px] md:leading-[100px] lg:-tracking-[16px] lg:text-[140px] lg:leading-[140px] 2xl:text-[180px] 2xl:leading-[160px] title"
             ref={titleRef}
           >
-            Designing the future, one pixel at a time.{" "}
+            Designing the future, one pixel at a time/
             <Image
               src={"/images/1profile.png"}
-              className="inline-block hover:scale-110 transform transition-transform duration-300 hover:rotate-3 opacity-0"
+              className="relative md:inline-block hover:scale-110 transform transition-transform duration-300 hover:rotate-3 opacity-0 pt-10 md:pt-0 pl-2 md:pl-0"
               alt="profile"
               width={120}
               height={120}
               ref={imgRef}
             />
+          </h1>
+        </div>
+        <div className="flex items-center justify-center relative flex-col">
+          <div
+            className="hover:rotate-[135deg] transform transition-transform duration-300 p-2 bg-yellow-200 absolute left-[15rem]
+            bottom-[2.6rem] md:static z-10 cursor-pointer opacity-0"
+            ref={arrowRef}
+          >
+            <ArrowIcon />
+          </div>
+          <p
+            className="relative z-1 uppercase font-thin text-2xl mt-2 hidden md:flex -translate-y-8 opacity-0 tracking-tighter"
+            ref={scrollRef}
+          >
+            scroll
           </p>
         </div>
-        <div className="mt-10 flex flex-col items-center justify-between lg:flex-row relative bottom-10">
+        <div className="flex flex-col items-center justify-between lg:flex-row lg:relative lg:bottom-20">
           <a
             href="mailto:marianoalvarez66@gmail.com"
             target="_blank"
-            className="flex transform items-center justify-center rounded-full border-4 border-yellow-200 px-8 py-4 text-yellow transition-all duration-300 hover:bg-yellow-200 hover:text-[#0C0404] -translate-x-40 opacity-0 will-change-transform"
+            className="flex transform items-center justify-center rounded-full border-2 border-yellow-200 px-8 py-4 text-yellow transition-all duration-300 hover:bg-yellow-200 hover:text-[#0C0404] -translate-x-40 opacity-0 will-change-transform"
             ref={btnRef}
           >
-            <span className="font-italic text-xl font-medium uppercase lg:text-4xl text-center flex items-center whitespace-nowrap">
+            <span className="text-xl font-normal uppercase lg:text-4xl text-center flex items-center whitespace-nowrap -tracking-[2px]">
               Let&apos;s connect!
               <ArrowIcon width={60} height={50} />
             </span>
@@ -76,7 +144,7 @@ const Hero: React.FC = () => {
             className="mt-10 flex items-center justify-center lg:mt-0 opacity-0 translate-x-40"
             ref={textRef}
           >
-            <p className="max-w-lg font-thin uppercase text-[#0C0404] xl:text-2xl 2xl:text-3xl ">
+            <p className="max-w-lg pb-6 lg:pb-0 font-normal tracking-tighter uppercase text-[#0C0404] lg:-tracking-[2px] text-lg xl:text-2xl 2xl:text-3xl ">
               Crafting digital products such as website & mobile apps
               development & design.
             </p>

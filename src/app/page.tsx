@@ -6,7 +6,7 @@ import SubHero from "@/components/SubHero/SubHero";
 
 export default function Home() {
   return (
-    <div className="relative bg-[#FDFCFA]">
+    <div className="relative bg-[#FDFCFA] overflow-hidden">
       <Hero />
       <SubHero />
       <Marquee />

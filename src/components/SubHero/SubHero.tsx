@@ -37,21 +37,21 @@ const SubHero: React.FC = () => {
     });
   }, [container]);
   return (
-    <section className="mt-20">
+    <section className="">
       <div
         className="2xl:px-32 xl:px-28 lg:px-20 h-auto w-auto px-4 py-20 bg-[#0C0404]"
         ref={container}
       >
         <div className="max-w-5xl">
           <h3
-            className="relative text-[50px] leading-[50px] text-[#FDFCFA] 2xl:text-[100px] 2xl:leading-[120px] opacity-0 -translate-x-40 will-change-transform"
+            className="relative text-[50px] leading-[50px] text-[#FDFCFA] 2xl:text-[100px] 2xl:leading-[120px] xl:-tracking-[1px] 2xl:-tracking-[10px] opacity-0 -translate-x-40 will-change-transform lg:-tracking-[4px]"
             ref={digitalRef}
           >
             Transforming your digital dreams into reality.{" "}
-            <span className="inline-block h-10 xl:h-20 w-60 rounded-full bg-[#FDFCFA] mt-4 lg:mt-0"></span>
+            <span className="inline-block h-4 xl:h-8 w-60 rounded-full bg-[#FDFCFA] mt-4"></span>
           </h3>
         </div>
-        <div className="ml-auto flex max-w-5xl 2xl:-mt-28">
+        <div className="ml-auto flex max-w-4xl 2xl:max-w-5xl 2xl:-mt-34">
           <p
             className="text-xl font-thin leading-[40px] text-[#FDFCFA] lg:text-3xl 2xl:ml-52 opacity-0 translate-x-40 will-change-transform text-right"
             ref={aboutRef}

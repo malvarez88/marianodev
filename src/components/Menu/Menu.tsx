@@ -95,9 +95,9 @@ const Menu: React.FC = () => {
   }, [isMenuOpen]);
 
   return (
-    <div ref={container} className="relative z-20 -translate-y-20">
+    <div ref={container} className="relative z-20">
       <div
-        className="z-1 fixed left-0 top-0 flex w-screen items-center justify-between bg-[#FDFCFA] px-8 lg:px-20 py-6"
+        className="z-1 fixed left-0 top-0 flex w-screen items-center justify-between bg-[#0C0404] px-8 lg:px-20 py-4"
         ref={navbar}
       >
         <div className="cursor-pointer">
@@ -106,14 +106,14 @@ const Menu: React.FC = () => {
           </Link>
         </div>
         <div
-          className="cursor-pointer text-3xl font-thin text-[#0C0404]"
+          className="cursor-pointer text-3xl font-thin text-yellow-200"
           onClick={toggleMenu}
         >
           Menu
         </div>
       </div>
 
-      <div className="menu-overlay z-2 fixed left-0 top-0 flex h-screen w-screen flex-col items-center justify-between bg-yellow-200 px-8 lg:px-20 py-6">
+      <div className="menu-overlay z-2 fixed left-0 top-0 flex h-screen w-screen flex-col items-center justify-between bg-yellow-200 px-8 lg:px-20 py-4">
         <div className="flex w-full justify-between">
           <div className="">
             <Link href={"/"}>
@@ -128,7 +128,7 @@ const Menu: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex w-full flex-[3] items-center justify-center pt-8 md:w-auto md:flex-[5] md:justify-between">
+        <div className="flex w-full  items-center justify-center pt-8 md:w-auto md:flex-[5] md:justify-between">
           <div className="">
             {menuLinks.map((link, index) => (
               <div className="menu-link-item max-w-max" key={index}>
@@ -147,7 +147,7 @@ const Menu: React.FC = () => {
             ))}
           </div>
         </div>
-        <div className="mr-auto flex flex-col text-xl md:text-2xl">
+        <div className="mr-auto flex w-full text-lg flex-col md:text-2xl pb-10">
           <a
             href={"https://www.linkedin.com/in/malvarez88/"}
             className="flex items-center gap-2 uppercase"
