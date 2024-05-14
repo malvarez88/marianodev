@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -10,6 +10,7 @@ const SubHero: React.FC = () => {
   const aboutRef = useRef(null);
   const digitalRef = useRef(null);
   const container = useRef(null);
+  const lineRef = useRef<any | null>(null);
 
   useGSAP(() => {
     gsap.to(digitalRef.current, {
@@ -36,6 +37,36 @@ const SubHero: React.FC = () => {
       },
     });
   }, [container]);
+
+  useEffect(() => {
+    const line = lineRef.current;
+
+    const handleMouseEnter = () => {
+      gsap.to(line, {
+        borderRadius: "20px",
+        width: "10px",
+        duration: 0.5,
+        ease: "bounce.out",
+      });
+    };
+
+    const handleMouseLeave = () => {
+      gsap.to(line, {
+        borderRadius: "0px",
+        width: "240px",
+        duration: 0.5,
+        ease: "bounce.out",
+      });
+    };
+
+    line?.addEventListener("mouseenter", handleMouseEnter);
+    line?.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      line?.removeEventListener("mouseenter", handleMouseEnter);
+      line?.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
   return (
     <section className="">
       <div
@@ -47,8 +78,11 @@ const SubHero: React.FC = () => {
             className="relative text-[50px] leading-[50px] text-[#FDFCFA] 2xl:text-[100px] 2xl:leading-[120px] xl:-tracking-[1px] 2xl:-tracking-[10px] opacity-0 -translate-x-40 will-change-transform lg:-tracking-[4px]"
             ref={digitalRef}
           >
-            Transforming your digital dreams into reality.{" "}
-            <span className="inline-block h-4 xl:h-8 w-60 rounded-full bg-[#FDFCFA] mt-4"></span>
+            Transforming digital dreams into reality.{" "}
+            <span
+              className="inline-block h-4 xl:h-4 w-60 bg-[#FDFCFA] mt-4"
+              ref={lineRef}
+            ></span>
           </h3>
         </div>
         <div className="ml-auto flex max-w-4xl 2xl:max-w-5xl 2xl:-mt-34">

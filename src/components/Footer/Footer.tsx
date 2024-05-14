@@ -33,6 +33,7 @@ const Footer: React.FC = () => {
       },
     });
   }, []);
+
   return (
     <footer>
       <div className="bg-yellow-200 px-8 lg:px-24 py-20 flex flex-col items-center relative">
@@ -66,7 +67,6 @@ const Footer: React.FC = () => {
               www.linkedin.com
             </span>
           </a>
-
           <a
             href="/"
             target="_blank"

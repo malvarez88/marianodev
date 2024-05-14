@@ -5,7 +5,6 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ArrowIcon from "@/assets/icons/ArrowIcon";
-import { scroll } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -96,10 +95,10 @@ const Hero: React.FC = () => {
 
   return (
     <section className="relative">
-      <div className="px-4 pt-56 lg:px-20 h-full flex flex-col gap-10 justify-around md:justify-between">
+      <div className="px-4 pt-32 xl:pt-36 lg:px-24 h-full flex flex-col gap-10 justify-around md:justify-between">
         <div className="flex ">
           <h1
-            className="text-[78px] leading-[67px] -tracking-[8px] text-yellow sm:text-[80px]  sm:leading-[80px] md:text-[100px] md:leading-[100px] lg:-tracking-[16px] lg:text-[140px] lg:leading-[140px] 2xl:text-[180px] 2xl:leading-[160px] title"
+            className="text-[78px] leading-[67px] -tracking-[8px] text-yellow sm:text-[80px]  sm:leading-[80px] md:text-[100px] md:leading-[100px] lg:-tracking-[16px] lg:text-[140px] lg:leading-[140px] 2xl:text-[180px]  2xl:leading-[180px] title"
             ref={titleRef}
           >
             Designing the future, one pixel at a time/

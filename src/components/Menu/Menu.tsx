@@ -97,7 +97,7 @@ const Menu: React.FC = () => {
   return (
     <div ref={container} className="relative z-20">
       <div
-        className="z-1 fixed left-0 top-0 flex w-screen items-center justify-between bg-[#0C0404] px-8 lg:px-20 py-4"
+        className="z-1 fixed left-0 top-0 flex w-screen items-center justify-between bg-[#0C0404] px-8 lg:px-24 py-6"
         ref={navbar}
       >
         <div className="cursor-pointer">
@@ -113,7 +113,7 @@ const Menu: React.FC = () => {
         </div>
       </div>
 
-      <div className="menu-overlay z-2 fixed left-0 top-0 flex h-screen w-screen flex-col items-center justify-between bg-yellow-200 px-8 lg:px-20 py-4">
+      <div className="menu-overlay z-2 fixed left-0 top-0 flex h-screen w-screen flex-col items-center justify-between bg-yellow-200 px-8 lg:px-24 py-6">
         <div className="flex w-full justify-between">
           <div className="">
             <Link href={"/"}>
