@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
       ease: "power4.inOut",
       scrollTrigger: {
         trigger: textRef.current,
-        start: "top 50%",
+        start: "top 60%",
         end: "bottom bottom",
       },
     });

@@ -18,8 +18,10 @@ const projects: Work[] = [
 ];
 
 const Projects: React.FC = () => {
+  const titleRef = useRef(null);
   const projectsRefs = useRef<any>([]);
   const lineRef = useRef<any | null>(null);
+  const seeMoreRef = useRef(null);
 
   const animateProject = (ref: HTMLDivElement | null) => {
     gsap.to(ref, {
@@ -32,14 +34,32 @@ const Projects: React.FC = () => {
   };
 
   useGSAP(() => {
+    gsap.to(titleRef.current, {
+      opacity: 1,
+      y: 0,
+      scrollTrigger: {
+        trigger: titleRef.current,
+        start: "top 50%",
+        end: "bottom bottom",
+      },
+    });
     projectsRefs?.current?.forEach((projectRef: any) => {
       if (projectRef) {
         ScrollTrigger.create({
           trigger: projectRef,
-          start: "top 90%",
+          start: "top 50%",
           onEnter: () => animateProject(projectRef),
         });
       }
+    });
+    gsap.to(seeMoreRef.current, {
+      opacity: 1,
+      y: 0,
+      scrollTrigger: {
+        trigger: seeMoreRef.current,
+        start: "top 50%",
+        end: "bottom bottom",
+      },
     });
   });
 
@@ -72,7 +92,10 @@ const Projects: React.FC = () => {
   return (
     <section className="py-10 bg-[#0C0404]">
       <div className="min-h-screen w-full overflow-hidden px-8 py-10 lg:px-20 ">
-        <p className="mb-10 text-7xl -tracking-[6px] text-[#FDFCFA]">
+        <p
+          className="mb-10 text-7xl -tracking-[6px] text-[#FDFCFA] opacity-0 -translate-y-10"
+          ref={titleRef}
+        >
           My latest works\{" "}
           <span
             className="h-2 w-32 bg-yellow-200 inline-block"
@@ -111,7 +134,10 @@ const Projects: React.FC = () => {
             </div>
           ))}
         </div>
-        <div className="mt-20 flex items-center gap-10 flex-col md:flex-row">
+        <div
+          className="mt-20 flex items-center gap-10 flex-col md:flex-row opacity-0 -translate-y-10"
+          ref={seeMoreRef}
+        >
           <p className="text-2xl uppercase text-[#FDFCFA] lg:text-4xl">
             Want to see more?{" "}
           </p>

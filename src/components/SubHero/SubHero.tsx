@@ -38,13 +38,37 @@ const SubHero: React.FC = () => {
     });
   }, [container]);
 
+  useGSAP(() => {
+    gsap.to(digitalRef.current, {
+      y: -100,
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: container.current,
+        start: "50% 40%",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+    gsap.to(aboutRef.current, {
+      y: -100,
+      ease: "power4.out",
+      delay: 0.3,
+      scrollTrigger: {
+        trigger: container.current,
+        start: "50% 40%",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+  });
+
   useEffect(() => {
     const line = lineRef.current;
 
     const handleMouseEnter = () => {
       gsap.to(line, {
-        borderRadius: "20px",
-        width: "10px",
+        backgroundColor: "#fefcbf",
+
         duration: 0.5,
         ease: "bounce.out",
       });
@@ -52,8 +76,7 @@ const SubHero: React.FC = () => {
 
     const handleMouseLeave = () => {
       gsap.to(line, {
-        borderRadius: "0px",
-        width: "240px",
+        backgroundColor: "#FDFCFA",
         duration: 0.5,
         ease: "bounce.out",
       });
@@ -70,27 +93,27 @@ const SubHero: React.FC = () => {
   return (
     <section className="">
       <div
-        className="2xl:px-32 xl:px-28 lg:px-20 h-auto w-auto px-4 py-20 bg-[#0C0404]"
+        className="xl:px-24 lg:px-20 h-auto w-auto px-4 py-20 bg-[#0C0404]"
         ref={container}
       >
-        <div className="max-w-5xl">
+        <div className="">
           <h3
-            className="relative text-[50px] leading-[50px] text-[#FDFCFA] 2xl:text-[100px] 2xl:leading-[120px] xl:-tracking-[1px] 2xl:-tracking-[10px] opacity-0 -translate-x-40 will-change-transform lg:-tracking-[4px]"
+            className="relative text-[50px] max-w-7xl leading-[50px] text-[#FDFCFA] xl:text-[100px] xl:leading-[80px] 2xl:text-[120px] 2xl:leading-[120px] xl:-tracking-[1px] 2xl:-tracking-[10px] opacity-0 -translate-x-40 will-change-transform lg:-tracking-[4px]"
             ref={digitalRef}
           >
             Transforming digital dreams into reality.{" "}
             <span
-              className="inline-block h-4 xl:h-4 w-60 bg-[#FDFCFA] mt-4"
+              className="inline-block mb-auto h-4 xl:h-4 w-60 bg-[#FDFCFA]"
               ref={lineRef}
             ></span>
           </h3>
         </div>
-        <div className="ml-auto flex max-w-4xl 2xl:max-w-5xl 2xl:-mt-34">
+        <div className="ml-auto flex 2xl:-mt-34 justify-end mt-4">
           <p
-            className="text-xl font-thin leading-[40px] text-[#FDFCFA] lg:text-3xl 2xl:ml-52 opacity-0 translate-x-40 will-change-transform text-right"
+            className="text-3xl font-thin w-full md:max-w-5xl leading-[30px] text-[#FDFCFA] lg:text-4xl 2xl:ml-52 opacity-0 translate-x-40 will-change-transform lg:text-right"
             ref={aboutRef}
           >
-            I&apos;m Mariano Alvarez, a Frontend Developer and UX/UI Designer
+            I&apos;m Mariano Alvarez, a Frontend Developer and Graphic Designer
             with passion for creating exceptional online experiencies. I blend
             creativity with technical expertise to bring digital visions to
             life. Committed to staying updated with the latest trends and
