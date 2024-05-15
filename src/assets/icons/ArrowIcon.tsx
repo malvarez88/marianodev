@@ -2,7 +2,7 @@ const ArrowIcon: React.FC<React.SVGAttributes<HTMLOrSVGElement>> = ({
   className,
   width = 80,
   height = 80,
-  fill = "#EDEDED",
+  fill = "#0C0404",
   ...rest
 }) => (
   <svg
@@ -15,7 +15,7 @@ const ArrowIcon: React.FC<React.SVGAttributes<HTMLOrSVGElement>> = ({
   >
     <path
       d="M7 17L17 7M17 7H8M17 7V16"
-      stroke="#000000"
+      stroke={fill}
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
