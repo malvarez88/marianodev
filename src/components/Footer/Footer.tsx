@@ -74,7 +74,7 @@ const Footer: React.FC = () => {
         </a>
         <div className="flex mt-10 items-center justify-between w-full flex-col md:flex-row">
           <a
-            href="/"
+            href="https://www.linkedin.com/in/malvarez88/"
             target="_blank"
             className="lg:border-t border-[#0C0404] lg:border-l p-6 text-xl lg:text-2xl"
           >
@@ -84,7 +84,7 @@ const Footer: React.FC = () => {
             </span>
           </a>
           <a
-            href="/"
+            href="https://github.com/malvarez88"
             target="_blank"
             className="lg:border-t border-[#0C0404] lg:border-l p-6 text-xl lg:text-2xl"
           >
