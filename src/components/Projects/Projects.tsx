@@ -212,7 +212,7 @@ const Projects: React.FC = () => {
             Want to see more?{" "}
           </p>
           <span className="text-xl font-thin normal-case text-[#FDFCFA] opacity-80 lg:text-3xl">
-            Let&apos; talk at:{" "}
+            Let&apos;s talk at:{" "}
             <a href="mailto:marianoalvarez66@gmail.com" target="_blank">
               marianoalvarez66@gmail.com
             </a>
