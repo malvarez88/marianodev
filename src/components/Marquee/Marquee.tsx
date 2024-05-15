@@ -1,7 +1,14 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
 
-const technologies = ["React", "Next", "Javascript", "GSAP", "Figma"];
+const technologies = [
+  "React",
+  "Next",
+  "Javascript",
+  "Typescript",
+  "GSAP",
+  "Figma",
+];
 const titles = [
   "Web Developer",
   "Graphic Designer",
