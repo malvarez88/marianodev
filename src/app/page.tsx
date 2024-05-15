@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import Footer from "@/components/Footer/Footer";
 import Hero from "@/components/Hero/Hero";
-import Marquee from "@/components/Marquee/Marquee";
+import Marqueee from "@/components/Marquee/Marquee";
 import Projects from "@/components/Projects/Projects";
 import SubHero from "@/components/SubHero/SubHero";
 import Lenis from "lenis";
@@ -20,7 +20,7 @@ export default function Home() {
     <div className="relative bg-[#FDFCFA] overflow-hidden">
       <Hero />
       <SubHero />
-      <Marquee />
+      <Marqueee />
       <Projects />
       <Footer />
     </div>

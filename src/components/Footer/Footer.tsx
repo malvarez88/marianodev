@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Footer: React.FC = () => {
   const titleRef = useRef(null);
   const textRef = useRef(null);
+  const btnRef = useRef(null);
 
   useGSAP(() => {
     gsap.to(titleRef.current, {
@@ -32,6 +33,16 @@ const Footer: React.FC = () => {
         end: "bottom bottom",
       },
     });
+    gsap.to(btnRef.current, {
+      opacity: 1,
+      duration: 0.5,
+      ease: "power4.inOut",
+      scrollTrigger: {
+        trigger: btnRef.current,
+        start: "top 60%",
+        end: "bottom bottom",
+      },
+    });
   }, []);
 
   return (
@@ -51,11 +62,16 @@ const Footer: React.FC = () => {
           contact me if you want to collaborate on future projects or have a
           little chat.
         </p>
-        <button className="border border-[#0C0404] rounded-full px-20 py-6 mt-10 w-auto text-center hover:bg-[#0C0404] hover:border-yellow-200 hover:text-yellow-200 transform transition-all duration-500 hover:scale-110">
+        <a
+          href="mailto:marianoalvarez66@gmail.com"
+          target="_blank"
+          className="border border-[#0C0404] rounded-full px-20 py-6 mt-10 w-auto text-center hover:bg-[#0C0404] hover:border-yellow-200 hover:text-yellow-200 transform transition-all duration-500 hover:scale-110 opacity-0"
+          ref={btnRef}
+        >
           <p className="text-xl lg:text-4xl uppercase -tracking-[2px]">
             Let&apos;s connect!
           </p>
-        </button>
+        </a>
         <div className="flex mt-10 items-center justify-between w-full flex-col md:flex-row">
           <a
             href="/"

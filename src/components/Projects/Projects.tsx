@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, LegacyRef, useEffect } from "react";
+import React, { useRef, LegacyRef, useEffect, useState } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -8,20 +8,39 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 interface Work {
   title: string;
   company: string;
+  img?: string;
 }
 
 const projects: Work[] = [
-  { title: "DHN Desarrolladora", company: "DHN Construcciones SRL" },
-  { title: "HourlyRate App", company: "HourlyRate.ai" },
-  { title: "HourlyRate Website", company: "HourlyRate.ai" },
-  { title: "D'aura Studio", company: "D'aura Arquitectura" },
+  {
+    title: "DHN Desarrolladora",
+    company: "DHN Construcciones SRL",
+    img: "/images/hourlyrate.png",
+  },
+  {
+    title: "HourlyRate App",
+    company: "HourlyRate.ai",
+    img: "/images/hourlyrate1.png",
+  },
+  {
+    title: "HourlyRate Website",
+    company: "HourlyRate.ai",
+    img: "/images/hourlyrateapp.png",
+  },
+  {
+    title: "D'aura Studio",
+    company: "D'aura Arquitectura",
+    img: "/images/hourlyratelanding.png",
+  },
 ];
 
 const Projects: React.FC = () => {
+  const [currentImage, setCurrentImage] = useState<string>("");
   const titleRef = useRef(null);
   const projectsRefs = useRef<any>([]);
   const lineRef = useRef<any | null>(null);
   const seeMoreRef = useRef(null);
+  const imageRef = useRef(null);
 
   const animateProject = (ref: HTMLDivElement | null) => {
     gsap.to(ref, {
@@ -89,8 +108,55 @@ const Projects: React.FC = () => {
     };
   }, []);
 
+  // useEffect(() => {
+  //   const handleMouseMove = (event: MouseEvent) => {
+  //     const x = event.clientX - imageRef.current!.offsetWidth / 2;
+  //     const y = event.clientY - imageRef.current!.offsetHeight;
+  //     gsap.to(imageRef.current, { x, y, duration: 0.1 });
+  //   };
+
+  //   document.addEventListener("mousemove", handleMouseMove);
+
+  //   return () => {
+  //     document.removeEventListener("mousemove", handleMouseMove);
+  //   };
+  // }, []);
+
+  // const handleMouseEnter = (img: string) => {
+  //   setCurrentImage(img);
+  // };
+
+  // const handleMouseLeave = () => {
+  //   setCurrentImage("");
+  // };
+
+  // useEffect(() => {
+  //   const handleMouseMove = (event: MouseEvent) => {
+  //     if (!imageRef.current) return;
+  //     const x = event.pageX;
+  //     const y = event.pageY;
+  //     gsap.to(imageRef.current, { x, y, duration: 0.1 });
+  //   };
+
+  //   document.addEventListener("mousemove", handleMouseMove);
+
+  //   return () => {
+  //     document.removeEventListener("mousemove", handleMouseMove);
+  //   };
+  // }, []);
+
+  // const handleMouseEnter = (img: string) => {
+  //   setCurrentImage(img);
+  //   gsap.to(imageRef.current, { opacity: 1, duration: 0.3 });
+  // };
+
+  // const handleMouseLeave = () => {
+  //   setCurrentImage("");
+  //   gsap.to(imageRef.current, { opacity: 0, duration: 0.3 });
+  // };
+
   return (
-    <section className="py-10 bg-[#0C0404]">
+    <section className="py-20 bg-[#0C0404]">
       <div className="min-h-screen w-full overflow-hidden px-8 py-10 lg:px-20 ">
         <p
           className="mb-10 text-7xl -tracking-[6px] text-[#FDFCFA] opacity-0 -translate-y-10"
@@ -105,16 +171,18 @@ const Projects: React.FC = () => {
         <div className="w-full">
           {projects.map((project, index) => (
             <div
-              key={index}
+              key={`project_${index}`}
+              // onMouseEnter={() => handleMouseEnter(project.img ?? "")}
+              // onMouseLeave={handleMouseLeave}
               ref={(el) => (projectsRefs.current[index] = el as any)}
-              className="group relative flex items-start lg:items-center justify-between border-b flex-col lg:flex-row  border-[#FDFCFA] py-8 lg:py-16 opacity-0"
+              className="group relative flex items-start lg:items-center justify-between border-b flex-col lg:flex-row  border-yellow-200 py-8 lg:py-16 opacity-0 cursor-pointer"
             >
               <div className="flex flex-col lg:flex-row lg:items-center gap-4">
                 <p className="text-xl text-[#FDFCFA] md:text-4xl md:-tracking-[2px] lg:text-6xl lg:-tracking-[6px]">
-                  {project.title} -{" "}
+                  {project.title}{" "}
                 </p>
-                <span className="text-xl md:text-2xl lg:text-4xl -tracking-[2px] lg:-tracking-[4px] text-[#FDFCFA]">
-                  {project.company}
+                <span className="text-xl md:text-2xl lg:text-4xl -tracking-[2px] lg:-tracking-[1px] text-[#FDFCFA] font-thin">
+                  - {project.company}
                 </span>
               </div>
               <div>
@@ -122,15 +190,17 @@ const Projects: React.FC = () => {
                   Website Development
                 </p>
               </div>
-              <div className="absolute right-0 md:right-80 z-10  bg-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100 hidden md:block">
+              {/* <div className="absolute z-10 bg-primary opacity-0  pointer-events-none">
                 <Image
-                  src="/images/hourlyrate.png"
+                  ref={imageRef}
+                  src={currentImage}
                   alt="Project Image"
                   className="h-full w-full object-contain"
+                  loading="lazy"
                   width={500}
                   height={500}
                 />
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

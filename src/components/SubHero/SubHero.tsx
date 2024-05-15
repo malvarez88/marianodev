@@ -40,22 +40,23 @@ const SubHero: React.FC = () => {
 
   useGSAP(() => {
     gsap.to(digitalRef.current, {
-      y: -100,
-      ease: "power4.out",
+      x: -600,
+      // ease: "power4.out",
+      duration: 3,
       scrollTrigger: {
         trigger: container.current,
-        start: "50% 40%",
+        start: "20% top",
         end: "bottom top",
         scrub: true,
       },
     });
     gsap.to(aboutRef.current, {
-      y: -100,
-      ease: "power4.out",
-      delay: 0.3,
+      x: 600,
+      // ease: "power4.out",
+      duration: 3,
       scrollTrigger: {
         trigger: container.current,
-        start: "50% 40%",
+        start: "20% top",
         end: "bottom top",
         scrub: true,
       },
@@ -93,12 +94,12 @@ const SubHero: React.FC = () => {
   return (
     <section className="">
       <div
-        className="xl:px-24 lg:px-20 h-auto w-auto px-4 py-20 bg-[#0C0404]"
+        className="xl:px-24 lg:px-20 h-auto w-auto px-4 pt-20 pb-32 bg-[#0C0404]"
         ref={container}
       >
         <div className="">
           <h3
-            className="relative text-[50px] max-w-7xl leading-[50px] text-[#FDFCFA] xl:text-[100px] xl:leading-[80px] 2xl:text-[120px] 2xl:leading-[120px] xl:-tracking-[1px] 2xl:-tracking-[10px] opacity-0 -translate-x-40 will-change-transform lg:-tracking-[4px]"
+            className="relative text-[50px] max-w-7xl leading-[50px] text-[#FDFCFA] xl:text-[100px] xl:leading-[80px] 2xl:text-[120px] 2xl:leading-[120px] xl:-tracking-[1px] 2xl:-tracking-[10px] opacity-0 will-change-transform lg:-tracking-[4px]"
             ref={digitalRef}
           >
             Transforming digital dreams into reality.{" "}
@@ -110,7 +111,7 @@ const SubHero: React.FC = () => {
         </div>
         <div className="ml-auto flex 2xl:-mt-34 justify-end mt-4">
           <p
-            className="text-3xl font-thin w-full md:max-w-5xl leading-[30px] text-[#FDFCFA] lg:text-4xl 2xl:ml-52 opacity-0 translate-x-40 will-change-transform lg:text-right"
+            className="text-3xl font-thin w-full md:max-w-5xl leading-[30px] text-[#FDFCFA] lg:text-4xl 2xl:ml-52 opacity-0 will-change-transform lg:text-right"
             ref={aboutRef}
           >
             I&apos;m Mariano Alvarez, a Frontend Developer and Graphic Designer
