@@ -156,7 +156,7 @@ const Projects: React.FC = () => {
   // };
 
   return (
-    <section className="py-20 bg-[#0C0404]">
+    <section className="py-20 bg-[#0C0404]" id="work">
       <div className="min-h-screen w-full overflow-hidden px-8 py-10 lg:px-20 ">
         <p
           className="mb-10 text-7xl -tracking-[6px] text-[#FDFCFA] opacity-0 -translate-y-10"

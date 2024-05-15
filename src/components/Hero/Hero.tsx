@@ -142,7 +142,7 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative">
+    <section className="relative" id="/">
       <div
         className="px-4 pt-28 xl:pt-32 2xl:pt-20 lg:px-24 h-full flex flex-col gap-6 justify-around md:justify-between bg-[#0C0404]"
         ref={container}

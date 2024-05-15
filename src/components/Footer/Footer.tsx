@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
   }, []);
 
   return (
-    <footer>
+    <footer id="contact">
       <div className="bg-yellow-200 px-8 lg:px-24 py-20 flex flex-col items-center relative">
         <h1
           className="title text-[44px] -tracking-[4px] leading-[36px] xl:text-[120px] text-center xl:leading-[90px] py-6"

@@ -92,7 +92,7 @@ const SubHero: React.FC = () => {
     };
   }, []);
   return (
-    <section className="">
+    <section className="" id="about">
       <div
         className="xl:px-24 lg:px-20 h-auto w-auto px-4 pt-20 pb-32 bg-[#0C0404]"
         ref={container}
