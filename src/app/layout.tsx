@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Work_Sans } from "next/font/google";
 import "./globals.css";
 import Menu from "@/components/Menu/Menu";
+import GoogleAnalytics from "@/components/GoogleAnalytics/GoogleAnalytics";
 
 const workSans = Work_Sans({ subsets: ["latin"] });
 
@@ -17,6 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleAnalytics />
       <body className={workSans.className}>
         <Menu />
         {children}
