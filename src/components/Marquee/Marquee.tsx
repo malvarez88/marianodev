@@ -1,17 +1,38 @@
 import React from "react";
+import Marquee from "react-fast-marquee";
 
-const Marquee = () => {
+const technologies = ["React", "Next", "Javascript", "GSAP", "Figma"];
+const titles = [
+  "Web Developer",
+  "Graphic Designer",
+  "Contemporary Philosopher??",
+];
+
+const Marqueee = () => {
   return (
-    <section>
-      <div className="h-auto w-full">
-        <div className="flex w-full items-center justify-center bg-yellow-200 py-40">
-          <h4 className="text-primary text-[50px]">
-            Marquesina con info de lo que hago?
-          </h4>
-        </div>
-      </div>
-    </section>
+    <div className="w-full overflow-hidden relative bg-[#0C0404] text-[#FDFCFA] py-8 flex flex-col gap-4 border-y border-yellow-200">
+      <Marquee pauseOnHover autoFill>
+        {technologies.map((tech, index) => (
+          <div key={`tech_${index}`} className="p-2 cursor-pointer">
+            <p className="text-4xl md:text-5xl flex items-center justify-center font-semibold uppercase md:-tracking-[4px]">
+              {tech}{" "}
+              <span className="w-4 h-4 inline-block bg-yellow-200 ml-6 rounded-full" />
+            </p>
+          </div>
+        ))}
+      </Marquee>
+      <Marquee pauseOnHover autoFill direction="right">
+        {titles.map((title, index) => (
+          <div key={`title_${index}`} className="p-2 cursor-pointer">
+            <p className="text-4xl md:text-5xl flex items-center justify-center font-semibold md:-tracking-[4px]">
+              {title}
+              <span className="w-4 h-4 inline-block bg-yellow-200 ml-6 rounded-full" />
+            </p>
+          </div>
+        ))}
+      </Marquee>
+    </div>
   );
 };
 
-export default Marquee;
+export default Marqueee;
