@@ -144,12 +144,12 @@ const Hero: React.FC = () => {
   return (
     <section className="relative" id="/">
       <div
-        className="px-4 pt-28 xl:pt-32 2xl:pt-20 lg:px-24 h-full flex flex-col gap-6 justify-around md:justify-between bg-[#0C0404]"
+        className="px-4 pt-28 xl:pt-32  2xl:pt-20 lg:px-24 h-full flex flex-col gap-6 justify-around md:justify-between dark:bg-[#FDFCFA] bg-[#0C0404]"
         ref={container}
       >
         <div className="flex sm:mt-20 lg:mt-10 2xl:mt-20">
           <h1
-            className="text-[78px] leading-[67px] -tracking-[8px] text-yellow sm:text-[80px]  sm:leading-[80px] md:text-[100px] md:leading-[100px] lg:-tracking-[16px] lg:text-[140px] lg:leading-[140px] 2xl:text-[180px]  2xl:leading-[180px] title text-[#FDFCFA] opacity-1 lg:pr-32"
+            className="text-[78px] leading-[67px] -tracking-[8px] text-yellow sm:text-[80px]  sm:leading-[80px] md:text-[100px] md:leading-[100px] lg:-tracking-[16px] lg:text-[140px] lg:leading-[140px] 2xl:text-[180px]  2xl:leading-[180px] title text-[#FDFCFA] dark:text-[#0C0404] opacity-1 lg:pr-32"
             ref={titleRef}
           >
             Designing the
