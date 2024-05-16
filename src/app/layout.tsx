@@ -3,12 +3,14 @@ import { Work_Sans } from "next/font/google";
 import "./globals.css";
 import Menu from "@/components/Menu/Menu";
 import GoogleAnalytics from "@/components/GoogleAnalytics/GoogleAnalytics";
+import { Providers } from "./providers";
 
 const workSans = Work_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "MarianoDev",
   description: "Frontend Developer - Portfolio",
+  creator: "Mariano Alvarez",
 };
 
 export default function RootLayout({
@@ -17,11 +19,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <GoogleAnalytics />
       <body className={workSans.className}>
-        <Menu />
-        {children}
+        <Providers>
+          <Menu />
+          {children}
+        </Providers>
       </body>
     </html>
   );

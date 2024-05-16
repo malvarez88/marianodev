@@ -7,6 +7,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Logo from "@/assets/icons/Logo";
 import ArrowIcon from "@/assets/icons/ArrowIcon";
+import ThemeSwitch from "../ThemeSwitch/ThemeSwitch";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -105,6 +106,7 @@ const Menu: React.FC = () => {
             <Logo fill={"#FEF08A"} />
           </Link>
         </div>
+        <ThemeSwitch />
         <div
           className="cursor-pointer text-3xl font-thin text-yellow-200"
           onClick={toggleMenu}
