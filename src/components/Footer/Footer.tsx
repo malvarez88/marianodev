@@ -47,15 +47,16 @@ const Footer: React.FC = () => {
 
   return (
     <footer id="contact">
-      <div className="bg-yellow-200 px-8 lg:px-24 py-20 flex flex-col items-center relative">
+      <div className="bg-yellow-200 px-8 lg:px-24 py-10 flex flex-col items-center relative">
         <h1
           className="title text-[44px] -tracking-[4px] leading-[36px] xl:text-[120px] text-center xl:leading-[90px] py-6"
           ref={titleRef}
         >
-          Communication matters to start good things/
+          {/* Communication matters to start good things/ */}
+          Communication is one key to success. Let&apos;s start one/
         </h1>
         <p
-          className="mt-20 text-xl xl:text-3xl text-center font-thin opacity-0 translate-x-40"
+          className="mt-10 text-xl xl:text-3xl text-center font-thin opacity-0 translate-x-40"
           ref={textRef}
         >
           I&apos;m currently available for freelance worldwide. Feel free to
@@ -76,27 +77,23 @@ const Footer: React.FC = () => {
           <a
             href="https://www.linkedin.com/in/malvarez88/"
             target="_blank"
-            className="lg:border-t border-[#0C0404] lg:border-l p-6 text-xl lg:text-2xl"
+            className="p-6 text-xl lg:text-2xl"
           >
             <p>Linkedin</p>
-            <span className="text-sm lg:text-lg opacity-20">
-              www.linkedin.com
-            </span>
+            <span className="text-sm lg:text-lg opacity-40">in/malvarez88</span>
           </a>
           <a
             href="https://github.com/malvarez88"
             target="_blank"
-            className="lg:border-t border-[#0C0404] lg:border-l p-6 text-xl lg:text-2xl"
+            className="p-6 text-xl lg:text-2xl"
           >
             <p>Github</p>
-            <span className="text-sm lg:text-lg opacity-20">
-              www.github.com
-            </span>
+            <span className="text-sm lg:text-lg opacity-40">/malvarez88</span>
           </a>
         </div>
       </div>{" "}
       <div className="flex items-center justify-center">
-        <span className="opacity-20 absolute bottom-4">
+        <span className="opacity-40 absolute bottom-4">
           Mariano Alvarez 2024 - All rights reserved
         </span>
       </div>
