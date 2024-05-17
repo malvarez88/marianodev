@@ -38,7 +38,7 @@ const Project: React.FC = () => {
               d="m17 16-4-4 4-4m-6 8-4-4 4-4"
             />
           </svg>
-          <p className="font-thin uppercase">Go back </p>
+          <p className="font-thin uppercase">Go back</p>
         </Link>
       </div>
     );
