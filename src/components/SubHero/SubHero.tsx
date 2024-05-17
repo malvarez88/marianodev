@@ -121,13 +121,14 @@ const SubHero: React.FC = () => {
         </div>
         <div className="ml-auto flex 2xl:-mt-34 justify-end mt-4">
           <p
-            className="text-3xl font-thin w-full md:max-w-5xl leading-[30px] text-[#FDFCFA] lg:text-4xl 2xl:ml-52 opacity-0 will-change-transform lg:text-right"
+            className="text-3xl font-thin w-full md:max-w-5xl leading-[30px] text-[#FDFCFA] lg:text-4xl 2xl:ml-52 opacity-0 will-change-transform"
             ref={aboutRef}
           >
-            I&apos;m Mariano Alvarez, a Frontend Developer and Graphic Designer
-            with passion for creating exceptional online experiencies. I blend
-            creativity with technical expertise to bring digital visions to
-            life. Committed to staying updated with the latest trends and
+            I&apos;m Mariano Alvarez, a{" "}
+            <b className="text-yellow-200">Frontend Developer</b> and Graphic
+            Designer with passion for creating exceptional online experiencies.
+            I blend creativity with technical expertise to bring digital visions
+            to life. Committed to staying updated with the latest trends and
             technologies, I thrive on tackling new challenges and pushing the
             boundaries of what&apos;s possible in the digital realm.
           </p>

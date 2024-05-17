@@ -7,4 +7,5 @@ export type Work = {
   description?: string;
   technologies?: string[];
   video?: string;
+  website?: string;
 };

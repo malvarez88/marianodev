@@ -51,6 +51,16 @@ const Project: React.FC = () => {
           <h1 className="text-[50px] lg:text-[140px] -tracking-[4px] lg:-tracking-[16px] leading-[40px] lg:leading-[120px]">
             {project.title}
           </h1>
+          <div className="h-full items-center justify-center block mt-auto hover:scale-105">
+            <Link
+              href={project.website ? project.website : ""}
+              target="_blank"
+              rel="noreferrer"
+              className="text-2xl uppercase border-b border-yellow-200 p-2 whitespace-nowrap"
+            >
+              Visit website
+            </Link>
+          </div>
           <div className="flex flex-col justify-between">
             <Link
               href={"/#work"}
@@ -81,7 +91,7 @@ const Project: React.FC = () => {
           </div>
         </div>
         <div className="mt-10 px-2">
-          <p className="text-xl md:text-5xl">{project.description}</p>
+          <p className="text-xl font-thin md:text-5xl">{project.description}</p>
         </div>
         <div className="w-full flex flex-col md:flex-row items-center justify-center">
           <ul className="my-10 bg-yellow-200 rounded-full font-semibold px-6 md:px-8 py-2 md:py-4 text-black flex items-center justify-center">
