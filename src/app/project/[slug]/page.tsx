@@ -5,7 +5,9 @@ import { projects } from "@/constants/Projects";
 import Image from "next/image";
 import Link from "next/link";
 
-const Project = () => {
+import YouTube from "react-youtube";
+
+const Project: React.FC = () => {
   const { slug } = useParams();
 
   const project = projects.find((project) => {
@@ -108,12 +110,7 @@ const Project = () => {
         </div>
         <div className="flex items-center flex-col justify-center mt-20">
           <p className="text-2xl font-bold mb-2">Video:</p>
-          {project.video && (
-            <video width="1000" controls muted className="rounded-lg">
-              <source src={project.video} type="video/mp4" />
-              Tu navegador no soporta la etiqueta de video.
-            </video>
-          )}
+          {project.video && <Video id={project.video} />}
         </div>
       </div>
     </div>
@@ -121,3 +118,18 @@ const Project = () => {
 };
 
 export default Project;
+
+interface VideoProps {
+  id: string;
+}
+
+const Video: React.FC<VideoProps> = ({ id }) => {
+  const opts = {
+    height: "500",
+    width: "1000",
+    playerVars: {
+      autoplay: 1,
+    },
+  };
+  return <YouTube videoId={id} opts={opts} />;
+};
