@@ -8,7 +8,7 @@ import { Work } from "@/Types";
 import { projects } from "@/constants/Projects";
 import Link from "next/link";
 
-const Projects: React.FC<Work[]> = () => {
+const Projects: React.FC = () => {
   const [currentImage, setCurrentImage] = useState<string>("");
   const titleRef = useRef(null);
   const projectsRefs = useRef<any>([]);

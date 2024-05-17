@@ -10,24 +10,28 @@ const projects: Work[] = [
     description:
       "In this project I had to take the dhn construccio page to a new world, updating its design, its logo and its image. We started talking about what direction they wanted to take, what pages they found interesting and what image they wanted to show to their potential clients. When creating the logo, I took into account the main idea, taking the combination of work and ideas as a key. So it looks like two letters, we can see the third one between them.",
     technologies: ["typescript", "nextjs", "GSAP"],
+    video: "/videos/dhnvideo.mov",
   },
   {
     id: 2,
     slug: "hourlyrate-app",
     title: "HourlyRate App",
     company: "HourlyRate.ai",
-    img: "/images/hourlyrate1.png",
+    img: "/images/hourlyrateapp.png",
     description:
-      "The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software. Today it's seen all around the web; on templates, websites, and stock designs. Use our generator to get your own, or read on for the authoritative history of lorem ipsum.",
+      "This application is designed to help freelancers find work. It is a centralized platform of several web pages, where depending on the user's specialty, the perfect jobs for their skills are shown. In my case, I served as a frontend lead, taking care of everything related to bringing the design to code.",
+    technologies: ["nextjs", "tailwind", "mobx", "tremor", "flowbite"],
   },
   {
     id: 3,
     slug: "hourlyrate-website",
     title: "HourlyRate Website",
     company: "HourlyRate.ai",
-    img: "/images/hourlyrateapp.png",
+    img: "/images/hourlyrateweb1.png",
     description:
-      "The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software. Today it's seen all around the web; on templates, websites, and stock designs. Use our generator to get your own, or read on for the authoritative history of lorem ipsum.",
+      "Landig page for the HourlyRate.ai application, in this case the idea was to present the functionality and how this application could benefit the user. We show the capability and benefits of using HourlyRate. My contribution was both to the development and when designing, using the latest in design and development techniques.",
+    technologies: ["nextjs", "tailwind", "framer motion"],
+    video: "/videos/hourlyratewebvideo.mov",
   },
   {
     id: 4,
@@ -36,7 +40,9 @@ const projects: Work[] = [
     company: "D'aura Arquitectura",
     img: "/images/daura.png",
     description:
-      "The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software. Today it's seen all around the web; on templates, websites, and stock designs. Use our generator to get your own, or read on for the authoritative history of lorem ipsum.",
+      "This Landing belongs to an architecture studio in Barcelona, I received the external design, which I had to improve and update depending on the client's needs, it has animations to make the page more attractive, it also has 3 languages, Spanish, English and Catalan. The animations are made with framer motion. I used Strapi as a backend, to facilitate the uploading of projects, news and architects.",
+    technologies: ["React", "CSS", "framer motion", "strapi"],
+    video: "/videos/dauravideo.mov",
   },
 ];
 

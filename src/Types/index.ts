@@ -6,4 +6,5 @@ export type Work = {
   img?: string | undefined | null;
   description?: string;
   technologies?: string[];
+  video?: string;
 };

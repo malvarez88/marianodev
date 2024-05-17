@@ -46,7 +46,7 @@ const Project = () => {
     <div className="min-h-screen bg-[#0C0404] ">
       <div className="pt-28 p-20 px-24 text-[#FDFCFA]">
         <div className="flex justify-between">
-          <h1 className="text-[200px] -tracking-[20px] leading-[180px]">
+          <h1 className="text-[140px] -tracking-[16px] leading-[120px]">
             {project.title}
           </h1>
           <div className="flex flex-col justify-between">
@@ -81,20 +81,23 @@ const Project = () => {
         <div className="mt-10 px-10">
           <p className="text-5xl">{project.description}</p>
         </div>
-        <ul className="mt-10 bg-yellow-200 rounded-full font-semibold px-8 py-4 text-black inline-block">
-          <p className="text-4xl uppercase inline-block">Technologies:</p>
-          <div className="inline-block">
-            {project?.technologies?.map((technology, index) => (
-              <li
-                key={`tech${index}`}
-                className="text-2xl uppercase inline-block mr-6 my-auto ml-8"
-              >
-                {technology}
-              </li>
-            ))}
-          </div>
-        </ul>
-        <div className="relative mt-10 w-full">
+        <div className="w-full flex items-center justify-center">
+          <ul className="my-10 bg-yellow-200 rounded-full font-semibold px-8 py-4 text-black flex items-center justify-center">
+            <p className="text-3xl uppercase inline-block">Technologies:</p>
+            <div className="inline-block">
+              {project?.technologies?.map((technology, index) => (
+                <li
+                  key={`tech${index}`}
+                  className="text-2xl uppercase inline-block mr-6 my-auto ml-8"
+                >
+                  {technology}
+                </li>
+              ))}
+            </div>
+          </ul>
+        </div>
+        <div className="relative mt-10 w-full flex flex-col items-center justify-center">
+          <p className="text-2xl font-bold mb-2">Images:</p>
           <Image
             alt={`project_${slug}`}
             src={project.img ? project.img : ""}
@@ -102,6 +105,15 @@ const Project = () => {
             width={1000}
             height={1000}
           />
+        </div>
+        <div className="flex items-center flex-col justify-center mt-20">
+          <p className="text-2xl font-bold mb-2">Video:</p>
+          {project.video && (
+            <video width="1000" controls muted className="rounded-lg">
+              <source src={project.video} type="video/mp4" />
+              Tu navegador no soporta la etiqueta de video.
+            </video>
+          )}
         </div>
       </div>
     </div>

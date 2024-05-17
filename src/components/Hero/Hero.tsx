@@ -154,7 +154,7 @@ const Hero: React.FC = () => {
           >
             {/* Designing the
             <br /> future, one pixel at a time/ */}
-            Coding with passion, and debugging with persistence/
+            Coding with passion & debugging with persistence/
             <Image
               src={"/images/1profile.png"}
               className="relative md:inline-block hover:scale-110 transform transition-transform duration-300 hover:rotate-3 opacity-0 pt-10 md:pt-0 pl-2 md:pl-0"
