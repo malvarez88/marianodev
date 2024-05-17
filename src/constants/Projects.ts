@@ -10,7 +10,7 @@ const projects: Work[] = [
     description:
       "In this project I had to take the dhn construccio page to a new world, updating its design, its logo and its image. We started talking about what direction they wanted to take, what pages they found interesting and what image they wanted to show to their potential clients. When creating the logo, I took into account the main idea, taking the combination of work and ideas as a key. So it looks like two letters, we can see the third one between them.",
     technologies: ["typescript", "nextjs", "GSAP"],
-    video: "/videos/dhnvideo.mov",
+    video: "/videos/dhnvideo.mp4",
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ const projects: Work[] = [
     description:
       "Landig page for the HourlyRate.ai application, in this case the idea was to present the functionality and how this application could benefit the user. We show the capability and benefits of using HourlyRate. My contribution was both to the development and when designing, using the latest in design and development techniques.",
     technologies: ["nextjs", "tailwind", "framer motion"],
-    video: "/videos/hourlyratewebvideo.mov",
+    video: "/videos/hourlyratewebvideo.mp4",
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const projects: Work[] = [
     description:
       "This Landing belongs to an architecture studio in Barcelona, I received the external design, which I had to improve and update depending on the client's needs, it has animations to make the page more attractive, it also has 3 languages, Spanish, English and Catalan. The animations are made with framer motion. I used Strapi as a backend, to facilitate the uploading of projects, news and architects.",
     technologies: ["React", "CSS", "framer motion", "strapi"],
-    video: "/videos/dauravideo.mov",
+    video: "/videos/dauravideo.mp4",
   },
 ];
 
