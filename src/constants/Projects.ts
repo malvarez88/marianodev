@@ -27,7 +27,7 @@ const projects: Work[] = [
     slug: "hourlyrate-website",
     title: "HourlyRate Website",
     company: "HourlyRate.ai",
-    img: "/images/hourlyrateweb1.png",
+    img: "/images/hourlyrate.png",
     description:
       "Landig page for the HourlyRate.ai application, in this case the idea was to present the functionality and how this application could benefit the user. We show the capability and benefits of using HourlyRate. My contribution was both to the development and when designing, using the latest in design and development techniques.",
     technologies: ["nextjs", "tailwind", "framer motion"],
