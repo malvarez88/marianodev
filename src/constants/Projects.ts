@@ -8,7 +8,7 @@ const projects: Work[] = [
     company: "DHN Construcciones SRL",
     img: "/images/dhn.png",
     description:
-      "In this project I had to take the dhn construccio page to a new world, updating its design, its logo and its image. We started talking about what direction they wanted to take, what pages they found interesting and what image they wanted to show to their potential clients. When creating the logo, I took into account the main idea, taking the combination of work and ideas as a key. So it looks like two letters, we can see the third one between them.",
+      "In this project I had to take the dhn construcciones page to a new world, updating the design & the logo. We started talking about what direction they wanted to take, what pages they found interesting and what image they wanted to show to their potential clients. When creating the logo, I took into account the main idea, taking the combination of work and ideas as a key. So it looks like two letters, we can see the third one between them.",
     technologies: ["typescript", "nextjs", "GSAP"],
     video: "LB65ilZuUaw",
   },
