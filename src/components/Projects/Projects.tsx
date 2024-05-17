@@ -4,37 +4,11 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Work } from "@/Types";
+import { projects } from "@/constants/Projects";
+import Link from "next/link";
 
-interface Work {
-  title: string;
-  company: string;
-  img?: string;
-}
-
-const projects: Work[] = [
-  {
-    title: "DHN Desarrolladora",
-    company: "DHN Construcciones SRL",
-    img: "/images/hourlyrate.png",
-  },
-  {
-    title: "HourlyRate App",
-    company: "HourlyRate.ai",
-    img: "/images/hourlyrate1.png",
-  },
-  {
-    title: "HourlyRate Website",
-    company: "HourlyRate.ai",
-    img: "/images/hourlyrateapp.png",
-  },
-  {
-    title: "D'aura Studio",
-    company: "D'aura Arquitectura",
-    img: "/images/hourlyratelanding.png",
-  },
-];
-
-const Projects: React.FC = () => {
+const Projects: React.FC<Work[]> = () => {
   const [currentImage, setCurrentImage] = useState<string>("");
   const titleRef = useRef(null);
   const projectsRefs = useRef<any>([]);
@@ -186,9 +160,13 @@ const Projects: React.FC = () => {
                 </span>
               </div>
               <div>
-                <p className="border-b border-[#FDFCFA] text-sm uppercase text-[#FDFCFA] lg:text-2xl -tracking-[2px] mt-4 lg:mt-0">
+                <Link
+                  as={`/project/${project.slug}`}
+                  href={"/project/[slug]"}
+                  className="border-b border-[#FDFCFA] text-sm uppercase text-[#FDFCFA] lg:text-2xl -tracking-[2px] mt-4 lg:mt-0"
+                >
                   Website Development
-                </p>
+                </Link>
               </div>
               {/* <div className="absolute z-10 bg-primary opacity-0  pointer-events-none">
                 <Image
