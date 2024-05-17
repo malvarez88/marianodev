@@ -46,9 +46,9 @@ const Project: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#0C0404] ">
-      <div className="pt-28 p-20 px-24 text-[#FDFCFA]">
-        <div className="flex justify-between">
-          <h1 className="text-[140px] -tracking-[16px] leading-[120px]">
+      <div className="pt-28 p-4 md:p-20 md:pt-28 md:px-24 text-[#FDFCFA]">
+        <div className="flex justify-between gap-10 flex-col xl:flex-row">
+          <h1 className="text-[50px] lg:text-[140px] -tracking-[4px] lg:-tracking-[16px] leading-[40px] lg:leading-[120px]">
             {project.title}
           </h1>
           <div className="flex flex-col justify-between">
@@ -75,22 +75,24 @@ const Project: React.FC = () => {
               </svg>
               <p className="font-thin uppercase">Go back </p>
             </Link>
-            <p className="text-2xl whitespace-nowrap mt-auto">
+            <p className="text-2xl whitespace-nowrap md:mt-auto mt-10">
               {project.company}
             </p>
           </div>
         </div>
-        <div className="mt-10 px-10">
-          <p className="text-5xl">{project.description}</p>
+        <div className="mt-10 px-2">
+          <p className="text-xl md:text-5xl">{project.description}</p>
         </div>
-        <div className="w-full flex items-center justify-center">
-          <ul className="my-10 bg-yellow-200 rounded-full font-semibold px-8 py-4 text-black flex items-center justify-center">
-            <p className="text-3xl uppercase inline-block">Technologies:</p>
+        <div className="w-full flex flex-col md:flex-row items-center justify-center">
+          <ul className="my-10 bg-yellow-200 rounded-full font-semibold px-6 md:px-8 py-2 md:py-4 text-black flex items-center justify-center">
+            <p className="text-lg md:text-3xl uppercase inline-block">
+              Technologies:
+            </p>
             <div className="inline-block">
               {project?.technologies?.map((technology, index) => (
                 <li
                   key={`tech${index}`}
-                  className="text-2xl uppercase inline-block mr-6 my-auto ml-8"
+                  className="text-base md:text-2xl uppercase inline-block mr-6 my-auto ml-8"
                 >
                   {technology}
                 </li>
@@ -125,8 +127,8 @@ interface VideoProps {
 
 const Video: React.FC<VideoProps> = ({ id }) => {
   const opts = {
-    height: "500",
-    width: "1000",
+    height: "100%",
+    width: "100%",
     playerVars: {
       autoplay: 1,
     },
