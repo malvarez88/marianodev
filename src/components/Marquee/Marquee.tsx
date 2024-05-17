@@ -11,8 +11,8 @@ const technologies = [
   "Typescript",
   "Figma",
   "Git",
-  "Framer-Motion",
-];
+  "Framer-Motion"]
+
 const titles = ["Web Developer"];
 
 //TODO: Move sgv to components
