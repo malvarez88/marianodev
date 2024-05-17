@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
   }, []);
 
   return (
-    <footer id="contactt">
+    <footer id="contact">
       <div
         className="bg-[#0C0404] px-8 lg:px-24 py-20 flex flex-col items-center relative"
         ref={container}
