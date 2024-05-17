@@ -1,8 +1,10 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useInsertionEffect, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import LinkedinIcon from "@/assets/icons/LinkedinIcon";
+import GithubIcon from "@/assets/icons/GithubIcon";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,8 +12,19 @@ const Footer: React.FC = () => {
   const titleRef = useRef(null);
   const textRef = useRef(null);
   const btnRef = useRef(null);
+  const container = useRef(null);
 
   useGSAP(() => {
+    gsap.to(container.current, {
+      backgroundColor: "#FEF08A",
+      duration: 1,
+      ease: "power4.inOut",
+      scrollTrigger: {
+        trigger: container.current,
+        start: "top 40%",
+        end: "bottom bottom",
+      },
+    });
     gsap.to(titleRef.current, {
       duration: 1.25,
       clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
@@ -46,16 +59,19 @@ const Footer: React.FC = () => {
   }, []);
 
   return (
-    <footer id="contact">
-      <div className="bg-yellow-200 px-8 lg:px-24 py-20 flex flex-col items-center relative">
+    <footer id="contactt">
+      <div
+        className="bg-[#0C0404] px-8 lg:px-24 py-20 flex flex-col items-center relative"
+        ref={container}
+      >
         <h1
           className="title text-[44px] -tracking-[4px] leading-[36px] xl:text-[120px] text-center xl:leading-[90px] py-6"
           ref={titleRef}
         >
-          Communication matters to start good things/
+          Communication: the secret ingredient to every project/
         </h1>
         <p
-          className="mt-20 text-xl xl:text-3xl text-center font-thin opacity-0 translate-x-40"
+          className="mt-10 text-xl xl:text-3xl text-center font-thin opacity-0 translate-x-40"
           ref={textRef}
         >
           I&apos;m currently available for freelance worldwide. Feel free to
@@ -76,25 +92,23 @@ const Footer: React.FC = () => {
           <a
             href="https://www.linkedin.com/in/malvarez88/"
             target="_blank"
-            className="lg:border-t border-[#0C0404] lg:border-l p-6 text-xl lg:text-2xl"
+            className="p-6 text-xl lg:text-2xl flex-col flex gap-2 items-center justify-center"
           >
-            <p>Linkedin</p>
-            <span className="text-sm lg:text-lg opacity-20">
-              www.linkedin.com
+            <LinkedinIcon />
+            <span className="text-base lg:text-xl opacity-20">
+              /in/malvarez88
             </span>
           </a>
           <a
             href="https://github.com/malvarez88"
             target="_blank"
-            className="lg:border-t border-[#0C0404] lg:border-l p-6 text-xl lg:text-2xl"
+            className="p-6 text-xl lg:text-2xl flex-col flex gap-2 items-center justify-center"
           >
-            <p>Github</p>
-            <span className="text-sm lg:text-lg opacity-20">
-              www.github.com
-            </span>
+            <GithubIcon />
+            <span className="text-base lg:text-xl opacity-20">/malvarez88</span>
           </a>
         </div>
-      </div>{" "}
+      </div>
       <div className="flex items-center justify-center">
         <span className="opacity-20 absolute bottom-4">
           Mariano Alvarez 2024 - All rights reserved

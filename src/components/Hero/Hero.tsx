@@ -144,16 +144,17 @@ const Hero: React.FC = () => {
   return (
     <section className="relative" id="/">
       <div
-        className="px-4 pt-28 xl:pt-32 2xl:pt-20 lg:px-24 h-full flex flex-col gap-6 justify-around md:justify-between bg-[#0C0404]"
+        className="px-4 pt-28 2xl:pt-28 lg:px-24 h-full flex flex-col gap-6 justify-around md:justify-between bg-[#0C0404]"
         ref={container}
       >
-        <div className="flex sm:mt-20 lg:mt-10 2xl:mt-20">
+        <div className="flex mt-10 lg:mt-10">
           <h1
-            className="text-[78px] leading-[67px] -tracking-[8px] text-yellow sm:text-[80px]  sm:leading-[80px] md:text-[100px] md:leading-[100px] lg:-tracking-[16px] lg:text-[140px] lg:leading-[140px] 2xl:text-[180px]  2xl:leading-[180px] title text-[#FDFCFA] opacity-1 lg:pr-32"
+            className="text-[60px] font-medium leading-[58px] -tracking-[3px] text-yellow sm:text-[75px] sm:leading-[75px] md:text-[95px] md:leading-[95px] lg:-tracking-[11px] lg:text-[135px] lg:leading-[135px] 2xl:text-[160px] 2xl:leading-[160px] title text-[#FDFCFA] opacity-1"
             ref={titleRef}
           >
-            Designing the
-            <br /> future, one pixel at a time/
+            {/* Designing the
+            <br /> future, one pixel at a time/ */}
+            Coding with passion & debugging with persistence/
             <Image
               src={"/images/1profile.png"}
               className="relative md:inline-block hover:scale-110 transform transition-transform duration-300 hover:rotate-3 opacity-0 pt-10 md:pt-0 pl-2 md:pl-0"

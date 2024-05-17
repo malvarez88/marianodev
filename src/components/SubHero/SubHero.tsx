@@ -13,6 +13,16 @@ const SubHero: React.FC = () => {
   const lineRef = useRef<any | null>(null);
 
   useGSAP(() => {
+    gsap.to(container.current, {
+      backgroundColor: "#0C0404",
+      duration: 1,
+      ease: "power4.inOut",
+      scrollTrigger: {
+        trigger: container.current,
+        start: "top 80%",
+        end: "bottom bottom",
+      },
+    });
     gsap.to(digitalRef.current, {
       x: 0,
       opacity: 1,
@@ -94,7 +104,7 @@ const SubHero: React.FC = () => {
   return (
     <section className="" id="about">
       <div
-        className="xl:px-24 lg:px-20 h-auto w-auto px-4 pt-20 pb-32 bg-[#0C0404]"
+        className="xl:px-24 lg:px-20 h-auto w-auto px-4 pt-20 pb-32 bg-[#FDFCFA]"
         ref={container}
       >
         <div className="">
