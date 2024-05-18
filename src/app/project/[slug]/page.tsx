@@ -1,14 +1,31 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { useParams } from "next/navigation";
 import { projects } from "@/constants/Projects";
 import Image from "next/image";
 import Link from "next/link";
-
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import YouTube from "react-youtube";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Project: React.FC = () => {
   const { slug } = useParams();
+  const imgContainer = useRef(null);
+
+  useGSAP(() => {
+    gsap.to(imgContainer.current, {
+      scale: 1.1,
+      scrollTrigger: {
+        trigger: imgContainer.current,
+        start: "top 20%",
+        end: "bottom bottom",
+        scrub: true,
+      },
+    });
+  });
 
   const project = projects.find((project) => {
     return project.slug === slug;
@@ -90,6 +107,18 @@ const Project: React.FC = () => {
             </p>
           </div>
         </div>
+        <div
+          className="relative my-20 w-full flex flex-col items-center justify-center"
+          ref={imgContainer}
+        >
+          <Image
+            alt={`project_${slug}`}
+            src={project.img ? project.img : ""}
+            className="object-cover rounded-lg mx-auto h-full w-full"
+            width={1000}
+            height={1000}
+          />
+        </div>
         <div className="mt-10 px-2">
           <p className="text-xl font-thin md:text-5xl">{project.description}</p>
         </div>
@@ -110,16 +139,7 @@ const Project: React.FC = () => {
             </div>
           </ul>
         </div>
-        <div className="relative mt-10 w-full flex flex-col items-center justify-center">
-          <p className="text-2xl font-bold mb-2">Images:</p>
-          <Image
-            alt={`project_${slug}`}
-            src={project.img ? project.img : ""}
-            className="object-cover rounded-lg mx-auto"
-            width={1000}
-            height={1000}
-          />
-        </div>
+
         <div className="flex items-center flex-col justify-center mt-20">
           <p className="text-2xl font-bold mb-2">Video:</p>
           {project.video && <Video id={project.video} />}
