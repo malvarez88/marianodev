@@ -6,6 +6,7 @@ import Marqueee from "@/components/Marquee/Marquee";
 import Projects from "@/components/Projects/Projects";
 import SubHero from "@/components/SubHero/SubHero";
 import Lenis from "lenis";
+import Video from "@/components/Video/Video";
 
 export default function Home() {
   useEffect(() => {
@@ -17,10 +18,11 @@ export default function Home() {
     requestAnimationFrame(raf);
   }, []);
   return (
-    <div className="relative bg-[#FDFCFA] overflow-hidden">
+    <div className="relative overflow-hidden bg-[#FDFCFA]">
       <Hero />
       <SubHero />
       <Marqueee />
+      <Video />
       <Projects />
       <Footer />
     </div>
