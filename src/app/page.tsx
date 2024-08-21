@@ -5,6 +5,7 @@ import Hero from "@/components/Hero/Hero";
 import Marqueee from "@/components/Marquee/Marquee";
 import Projects from "@/components/Projects/Projects";
 import SubHero from "@/components/SubHero/SubHero";
+import OtherComponent from "@/components/OtherComponent/OtherComponent";
 import Lenis from "lenis";
 
 export default function Home() {
@@ -17,9 +18,11 @@ export default function Home() {
     requestAnimationFrame(raf);
   }, []);
   return (
-    <div className="relative bg-[#FDFCFA] overflow-hidden">
+    <div className="relative overflow-hidden bg-[#FDFCFA]">
       <Hero />
+      <OtherComponent />
       <SubHero />
+
       <Marqueee />
       <Projects />
       <Footer />

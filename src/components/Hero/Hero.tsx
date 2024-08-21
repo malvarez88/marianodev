@@ -142,22 +142,22 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative" id="/">
+    <section className="relative h-[90vh]" id="/">
       <div
-        className="px-4 pt-28 2xl:pt-28 lg:px-24 h-full flex flex-col gap-6 justify-around md:justify-between bg-[#0C0404]"
+        className="flex h-full flex-col justify-around gap-6 bg-[#0C0404] px-4 pt-28 md:justify-between lg:px-24 2xl:pt-28"
         ref={container}
       >
-        <div className="flex mt-10 lg:mt-10">
+        <div className="mt-10 flex lg:mt-20">
           <h1
-            className="text-[60px] font-medium leading-[58px] -tracking-[3px] text-yellow sm:text-[75px] sm:leading-[75px] md:text-[95px] md:leading-[95px] lg:-tracking-[11px] lg:text-[135px] lg:leading-[135px] 2xl:text-[160px] 2xl:leading-[160px] title text-[#FDFCFA] opacity-1"
+            className="text-yellow title opacity-1 text-[60px] font-medium leading-[58px] -tracking-[3px] text-[#FDFCFA] sm:text-[75px] sm:leading-[75px] md:text-[95px] md:leading-[95px] lg:text-[135px] lg:leading-[135px] lg:-tracking-[11px] 2xl:text-[160px] 2xl:leading-[160px]"
             ref={titleRef}
           >
             {/* Designing the
             <br /> future, one pixel at a time/ */}
-            Coding with passion & debugging with persistence/
+            Creating digital experiences/
             <Image
               src={"/images/1profile.png"}
-              className="relative md:inline-block hover:scale-110 transform transition-transform duration-300 hover:rotate-3 opacity-0 pt-10 md:pt-0 pl-2 md:pl-0"
+              className="relative transform pl-2 pt-10 opacity-0 transition-transform duration-300 hover:rotate-3 hover:scale-110 md:inline-block md:pl-0 md:pt-0"
               alt="profile"
               width={120}
               height={120}
@@ -165,21 +165,21 @@ const Hero: React.FC = () => {
             />
           </h1>
         </div>
-        <div className="items-center justify-center relative flex-col hidden md:flex">
+        {/* <div className="relative hidden flex-col items-center justify-center md:flex">
           <div
-            className="hover:rotate-[135deg] transform transition-transform duration-300 p-2 bg-yellow-200 absolute left-[15rem] bottom-[2.6rem] md:left-0 md:bottom-0 md:static z-10 cursor-pointer opacity-0"
+            className="absolute bottom-[1.6rem] left-[15rem] z-10 transform cursor-pointer bg-yellow-200 p-2 opacity-0 transition-transform duration-300 hover:rotate-[135deg] md:absolute md:bottom-0 md:left-0"
             ref={arrowRef}
           >
             <ArrowIcon />
           </div>
           <p
-            className="relative z-1 uppercase font-thin text-2xl mt-2 hidden md:flex -translate-y-8 opacity-0 tracking-tighter text-[#FDFCFA]"
+            className="relative left-0 z-10 mt-2 hidden -translate-y-8 text-2xl font-thin uppercase tracking-tighter text-[#0C0404] opacity-0 md:flex"
             ref={scrollRef}
           >
             scroll
           </p>
-        </div>
-        <div
+        </div> */}
+        {/* <div
           className="flex flex-col items-center justify-between lg:flex-row lg:relative lg:bottom-20 opacity-0"
           ref={ctaRef}
         >
@@ -203,7 +203,7 @@ const Hero: React.FC = () => {
               development & design.
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
